@@ -47,8 +47,8 @@ $( '.thumbnails img' ).on("mouseleave", function() {
 $('.fun-section').on("mouseover", function(){
     TweenMax.to($('.train'), 2.5, {left:"0px", ease:Expo.easeOut});
     if ($('.train').css('left') == '0px'){
-            TweenMax.to($('.leftdoor'), 2, {left:"-75px", ease:Linear.easeIn});
-            TweenMax.to($('.rightdoor'), 2, {right:"-75px", ease:Linear.easeIn});     
+            TweenMax.to($('.leftdoor'), 1.5, {left:"-75px", ease:Linear.easeIn});
+            TweenMax.to($('.rightdoor'), 1.5, {right:"-75px", ease:Linear.easeIn});     
     }
 });
 
