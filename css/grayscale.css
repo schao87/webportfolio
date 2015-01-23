@@ -386,37 +386,50 @@ body {
     }
     .train{
         height: 250px;
-        width: 1000px;
+        width: 1050px;
         background: gray;
         /*margin: 0 auto;*/
         position: relative;
         left: 1289px;
     }
     .doorway{
-        background:white;
+        background:url("../img/interior.jpg") no-repeat;
+        background-size:cover;
         overflow: hidden;
         position: relative;
         height: 200px;
         width: 150px;
         top: 50px;
         margin-left: 150px;
-
+        border: 1px solid black;
+        float: left;
+    }
+    .hello{
+        display: none;
+        color: black;
+        z-index: 1;
+    }
+    .helloshow{
+        display: block;
+        color: black;
+        /*z-index: 100;*/
     }
     .leftdoor{
-        height: 200px;
-        width: 75px;
+        height: 199px;
+        width: 74px;
         background: gray;
         position: relative;
         float: left;
         border: 1px solid black;
     }
     .rightdoor{
-        height: 200px;
-        width: 75px;
+        height: 199px;
+        width: 74px;
         background: gray;
         position: relative;
         float: left;
         border: 1px solid black;
+        /*z-index: 100;*/
     }
 }
 

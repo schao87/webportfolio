@@ -46,11 +46,29 @@ $( '.thumbnails img' ).on("mouseleave", function() {
 });
 $('.fun-section').on("mouseover", function(){
     TweenMax.to($('.train'), 2.5, {left:"0px", ease:Expo.easeOut});
-    if ($('.train').css('left') == '0px'){
-            TweenMax.to($('.leftdoor'), 1.5, {left:"-75px", ease:Linear.easeIn});
-            TweenMax.to($('.rightdoor'), 1.5, {right:"-75px", ease:Linear.easeIn});     
+});
+var doorOpened = false;
+// $('.doorway').on("click", function(){
+//     TweenMax.to($('.leftdoor'), 1.5, {left:"-75px", ease:Linear.easeIn});
+//     TweenMax.to($('.rightdoor'), 1.5, {right:"-75px", ease:Linear.easeIn});
+//     doorOpened = true;
+//     console.log(doorOpened);  
+// });
+
+$('.doorway').on("click", function(){
+    if (doorOpened == false){
+        TweenMax.to($('.leftdoor'), 1.5, {left:"-75px", ease:Linear.easeIn});
+        TweenMax.to($('.rightdoor'), 1.5, {right:"-75px", ease:Linear.easeIn});
+        doorOpened = true;
+        console.log("door opened");
+    }else{
+        doorOpened = false;
+        TweenMax.to($('.leftdoor'), 1.5, {left:"0px", ease:Linear.easeIn});
+        TweenMax.to($('.rightdoor'), 1.5, {right:"0px", ease:Linear.easeIn});
+        console.log("door closed"); 
     }
 });
+
 
 
 
