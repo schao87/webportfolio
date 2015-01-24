@@ -389,10 +389,13 @@ body {
     }
     .callTrain{
         height: 40px;
-        width: 100px;
+        width: 150px;
         position: relative;
         background: red;
         color: white;
+        cursor: pointer;
+        font-weight: bold;
+        margin: 10px auto;
     }
     .train{
         height: 250px;
@@ -400,7 +403,7 @@ body {
         background: gray;
         /*margin: 0 auto;*/
         position: relative;
-        left: 1289px;
+        left: 1290px;
     }
     .doorway{
         background:url("../img/interior.jpg") no-repeat;

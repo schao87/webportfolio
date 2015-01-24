@@ -44,18 +44,27 @@ $( '.thumbnails img' ).on("mouseleave", function() {
         TweenMax.to($(this), .3, {height:"100px", width:"300px", top:"0px"});
         // TweenMax.to($(this), 0, {margin:"6px"});
 });
-$('.callTrain').on("click", function(){
-    TweenMax.to($('.train'), 2.5, {delay:2,left:"0px", ease:Expo.easeOut});
+$('.callTrain').on('mousedown', function(){
+    $(this).css('background', 'yellow');
+});
+$('.callTrain').on("mouseup", function(){
+    TweenMax.to($('.train'), 2.5, {delay:1, left:"0px", ease:Expo.easeOut});
+    $(this).css('background', 'red');
 });
 var doorOpened = false;
 var departing;
 
 function reset(){
-    $('.train').css("left", "1289px");
+    $('.train').css("left", "1290px");
+    $('.callTrain').css('visibility', 'visible');
 }
+function buttonHide(){
+    $('.callTrain').css('visibility', 'hidden');
+}
+
 function depart(){
     if(doorOpened == false){
-        departing = TweenMax.to($('.train'), 2, {delay:.5, left:"-2000px", ease:Expo.easeIn, onComplete:reset});
+        departing = TweenMax.to($('.train'), 2, {delay:.2, left:"-2000px", ease:Expo.easeIn, onStart:buttonHide, onComplete:reset});
     }
 }
 $('.doorway').on("click", function(){
