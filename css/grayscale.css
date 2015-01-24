@@ -399,11 +399,12 @@ body {
     }
     .train{
         height: 250px;
-        width: 1050px;
+        width: 1140px;
         background: gray;
-        /*margin: 0 auto;*/
+        margin-top: 10px;
         position: relative;
         left: 1290px;
+        border-radius: 20px 20px 0 0;
     }
     .doorway{
         background:url("../img/interior.jpg") no-repeat;
@@ -413,19 +414,36 @@ body {
         height: 200px;
         width: 150px;
         top: 50px;
-        margin-left: 150px;
+        /*margin-left: 172.5px;*/
         border: 1px solid black;
         float: left;
     }
-    .hello{
-        display: none;
-        color: black;
-        z-index: 1;
+    .front{
+        width: 40px;
+        height: 80px;
+        position: relative;
+        float: left;
+        margin:70px 112.5px 0 20px;
+        background: white;
+        border-radius: 5px;
     }
-    .helloshow{
-        display: block;
-        color: black;
-        /*z-index: 100;*/
+    .back{
+        width: 40px;
+        height: 80px;
+        position: relative;
+        float: left;
+        margin: 70px 20px 0 112.5px;
+        background: white;
+        border-radius: 5px;
+    }
+    .window{
+        position: relative;
+        height: 80px;
+        width: 150.5px;
+        margin: 70px 11px;
+        background: white;
+        float: left;
+        border-radius: 5px;
     }
     .leftdoor{
         height: 199px;
