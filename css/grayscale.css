@@ -417,32 +417,45 @@ body {
         /*margin-left: 172.5px;*/
         border: 1px solid black;
         float: left;
+        border-radius: 5px 5px 0 0;
     }
     .front{
         width: 40px;
         height: 80px;
         position: relative;
         float: left;
-        margin:70px 112.5px 0 20px;
+        margin:70px 70px 0 20px;
         background: white;
         border-radius: 5px;
+        border: 1px solid black;
     }
     .back{
         width: 40px;
         height: 80px;
         position: relative;
         float: left;
-        margin: 70px 20px 0 112.5px;
+        margin: 70px 20px 0 70px;
         background: white;
         border-radius: 5px;
+        border: 1px solid black;
     }
     .window{
         position: relative;
         height: 80px;
-        width: 150.5px;
-        margin: 70px 11px;
+        width: 116px;
+        margin: 70px 49px;
         background: white;
         float: left;
+        border-radius: 5px;
+        border: 1px solid black;
+    }
+    .doorwindows{
+        position: relative;
+        background: white;
+        height: 80px;
+        width: 56px;
+        margin: 18px 8px;
+        border: 1px solid black;
         border-radius: 5px;
     }
     .leftdoor{
@@ -452,6 +465,7 @@ body {
         position: relative;
         float: left;
         border: 1px solid black;
+        border-top-left-radius: 5px;
     }
     .rightdoor{
         height: 199px;
@@ -460,7 +474,7 @@ body {
         position: relative;
         float: left;
         border: 1px solid black;
-        /*z-index: 100;*/
+        border-top-right-radius: 5px;
     }
 }
 
