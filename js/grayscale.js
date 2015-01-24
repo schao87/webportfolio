@@ -44,30 +44,36 @@ $( '.thumbnails img' ).on("mouseleave", function() {
         TweenMax.to($(this), .3, {height:"100px", width:"300px", top:"0px"});
         // TweenMax.to($(this), 0, {margin:"6px"});
 });
-$('.fun-section').on("mouseover", function(){
-    TweenMax.to($('.train'), 2.5, {left:"0px", ease:Expo.easeOut});
+$('.callTrain').on("click", function(){
+    TweenMax.to($('.train'), 2.5, {delay:2,left:"0px", ease:Expo.easeOut});
 });
 var doorOpened = false;
-// $('.doorway').on("click", function(){
-//     TweenMax.to($('.leftdoor'), 1.5, {left:"-75px", ease:Linear.easeIn});
-//     TweenMax.to($('.rightdoor'), 1.5, {right:"-75px", ease:Linear.easeIn});
-//     doorOpened = true;
-//     console.log(doorOpened);  
-// });
+var departing;
 
+function reset(){
+    $('.train').css("left", "1289px");
+}
+function depart(){
+    if(doorOpened == false){
+        departing = TweenMax.to($('.train'), 2, {delay:.5, left:"-2000px", ease:Expo.easeIn, onComplete:reset});
+    }
+}
 $('.doorway').on("click", function(){
     if (doorOpened == false){
         TweenMax.to($('.leftdoor'), 1.5, {left:"-75px", ease:Linear.easeIn});
         TweenMax.to($('.rightdoor'), 1.5, {right:"-75px", ease:Linear.easeIn});
         doorOpened = true;
+        departing.kill();//stops depart function
         console.log("door opened");
     }else{
         doorOpened = false;
-        TweenMax.to($('.leftdoor'), 1.5, {left:"0px", ease:Linear.easeIn});
+        TweenMax.to($('.leftdoor'), 1.5, {left:"0px", ease:Linear.easeIn, onComplete:depart});
         TweenMax.to($('.rightdoor'), 1.5, {right:"0px", ease:Linear.easeIn});
         console.log("door closed"); 
     }
 });
+
+
 
 
 

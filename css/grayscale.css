@@ -384,6 +384,16 @@ body {
         height: 388px;
         padding-top: 100px;
     }
+    .fun-section{
+        overflow: hidden;
+    }
+    .callTrain{
+        height: 40px;
+        width: 100px;
+        position: relative;
+        background: red;
+        color: white;
+    }
     .train{
         height: 250px;
         width: 1050px;
