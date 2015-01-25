@@ -48,8 +48,9 @@ $('.callTrain').on('mousedown', function(){
     $(this).css('background', 'yellow');
 });
 $('.callTrain').on("mouseup", function(){
-    TweenMax.to($('.train'), 2.5, {delay:1, left:"0px", ease:Expo.easeOut});
+    TweenMax.to($('.train'), 2.7, {delay:1, left:"0px", ease:Expo.easeOut});
     $(this).css('background', 'red');
+    buttonHide();
 });
 var doorOpened = false;
 var departing;
@@ -61,10 +62,9 @@ function reset(){
 function buttonHide(){
     $('.callTrain').css('visibility', 'hidden');
 }
-
 function depart(){
     if(doorOpened == false){
-        departing = TweenMax.to($('.train'), 2, {delay:.2, left:"-2000px", ease:Expo.easeIn, onStart:buttonHide, onComplete:reset});
+        departing = TweenMax.to($('.train'), 2, {delay:.3, left:"-2000px", ease:Expo.easeIn, onComplete:reset});
     }
 }
 $('.doorway').on("click", function(){

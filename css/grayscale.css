@@ -397,6 +397,23 @@ body {
         font-weight: bold;
         margin: 10px auto;
     }
+    .station{
+        background: #d2c9c4;
+        width: 100%;
+        /*z-index:0;*/
+    }
+    .streetName{
+        height: 100px;
+        width: 250px;
+        border-radius: 100px;
+        color: white;
+        background: blue;
+        font-weight: bolder;
+        font-size: 35px;
+        /*z-index: 10;*/
+        position: absolute;
+        margin: 10px 450px;
+    }
     .train{
         height: 250px;
         width: 1140px;
@@ -404,7 +421,9 @@ body {
         margin-top: 10px;
         position: relative;
         left: 1290px;
-        border-radius: 20px 20px 0 0;
+        border-radius: 60px 60px 0 0;
+        z-index: 1000;
+        border: 1px solid black;
     }
     .doorway{
         background:url("../img/interior.jpg") no-repeat;
@@ -448,6 +467,36 @@ body {
         float: left;
         border-radius: 5px;
         border: 1px solid black;
+        overflow: hidden;
+    }
+    .trainNumber{
+        position: relative;
+        background: black;
+        width: 116px;
+        height: 25px;
+    }
+    .greenSix{
+        position: relative;
+        background: green;
+        color: white;
+        font-weight: bolder;
+        height: 20px;
+        width: 20px;
+        margin:0 5px;
+        border-radius: 50px;
+        top: 2px;
+        float: left;
+    }
+    .lastStop{
+        position: relative;
+        background: black;
+        color: white;
+        font-weight: bolder;
+        top: 7px;
+        font-size: 8px;
+        margin-left: 1px;
+        float: left;
+        width: 79px;
     }
     .doorwindows{
         position: relative;
