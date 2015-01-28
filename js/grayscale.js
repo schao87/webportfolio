@@ -44,6 +44,7 @@ $(document).ready(function(){
             TweenMax.to($(this), .3, {height:"100px", width:"300px", top:"0px"});
             // TweenMax.to($(this), 0, {margin:"6px"});
     });
+    /////////////////////////////////////////////Train logic//////////////////////////////////////////
     $('.callTrain').on('mousedown', function(){
         $(this).css('background', 'yellow');
     });
@@ -81,14 +82,17 @@ $(document).ready(function(){
             console.log("door closed"); 
         }
     });
+    ///////////////////////////////////// Target game logic ////////////////////////////////////////////
     var targetPull;
     var targetReset;
+    var hitpoint = 0;
+    var misspoint = 0;
 
     function targetReset(){
         TweenMax.to($('.target'), 0, {left:"-40px", top:"60px"});
     };
     function targetPull(){
-        TweenMax.to($('.target'), 3.5, {left:"600px", ease:Linear.easeNone});
+        TweenMax.to($('.target'), 4, {left:"600px", ease:Linear.easeNone});
     };
     
     $('.start').on('click', function(){
@@ -96,11 +100,13 @@ $(document).ready(function(){
         targetPull();
         $('.target').on('click', function(){
             TweenMax.to($('.target'), 1, {top:"300px", ease:Linear.easeOut, onComplete:targetReset});
+            $('.hit').html("HIT" + '<br>' + (hitpoint++));
         });
     });
+    $('.gungame').on('click',function(){
+        $('.miss').html("MISS" +'<br>' + (misspoint++));
+    });
     
-
-
 
 
 });

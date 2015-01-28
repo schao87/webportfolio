@@ -594,12 +594,19 @@ body {
         position: relative;
         background: blue;
         float: left;
-        /*overflow: hidden;*/
+        overflow: hidden;
+    }
+    .gunCont{
+        overflow: hidden;
+        height: 300px;
+        width: 600px;
+        position: relative;
+        float: left;
     }
     .target{
         height: 40px;
         width: 40px;
-        position: relative;
+        position: absolute;
         background: red;
         float: left;
         border-radius: 20px;
@@ -613,6 +620,24 @@ body {
         position: relative;
         float: left;
         background: red;
+    }
+    .hit{
+        height: 80px;
+        width:80px;
+        position: relative;
+        float: left;
+        margin-left: 20px;
+        background: white;
+        color: black;
+    }
+    .miss{
+       height: 80px;
+        width:80px;
+        position: relative;
+        float: left;
+        margin-left: 20px; 
+        background: white;
+        color: black;
     }
 }
 
