@@ -83,31 +83,40 @@ $(document).ready(function(){
         }
     });
     ///////////////////////////////////// Target game logic ////////////////////////////////////////////
-    var targetPull;
-    var targetReset;
     var hitpoint = 0;
     var misspoint = 0;
-
-    function targetReset(){
-        TweenMax.to($('.target'), 0, {left:"-40px", top:"60px"});
+    // var random1;
+    function random(){
+        randomtop1=Math.floor((Math.random() * 300) + 1);
+        randomtop2=Math.floor((Math.random() * 300) + 1);
+        randomtop3=Math.floor((Math.random() * 300) + 1);
+        randomtop4=Math.floor((Math.random() * 300) + 1);
+        randomleft1=Math.floor((Math.random() * 600) + 1);
+        randomleft2=Math.floor((Math.random() * 600) + 1);
+        randomleft3=Math.floor((Math.random() * 600) + 1);
+        console.log(randomtop1, randomtop2, randomtop3, randomleft1, randomleft2, randomleft3);
+        targetPull();
     };
+    // random();
+    
     function targetPull(){
-        TweenMax.to($('.target'), 4, {left:"600px", ease:Linear.easeNone});
+        TweenMax.fromTo($('.target'), 4, {left:-60, top:randomtop4}, {bezier:[{left:randomleft1, top:randomtop1}, {left:randomleft2, top:randomtop2}, {left:randomleft3, top:randomtop3}], ease:Linear.easeNone, onComplete:random});
     };
     
     $('.start').on('click', function(){
-        targetReset();
+        // targetReset();
+        random();
         targetPull();
-        $('.target').on('click', function(){
-            TweenMax.to($('.target'), 1, {top:"300px", ease:Linear.easeOut, onComplete:targetReset});
-            $('.hit').html("HIT" + '<br>' + (hitpoint++));
+    });
+    $('.target').on('click', function(){
+            TweenMax.to($('.target'), .4, {top:"300px", ease:Linear.easeOut, onComplete:random});
+            hitpoint++;
+            $('.hit').html("HIT" + '<br>' + hitpoint);
         });
-    });
     $('.gungame').on('click',function(){
-        $('.miss').html("MISS" +'<br>' + (misspoint++));
+        misspoint++;
+        $('.miss').html("MISS" +'<br>' + misspoint);
     });
-    
-
 
 });
 
