@@ -89,18 +89,19 @@ $(document).ready(function(){
     function random(){
         randomtop1=Math.floor((Math.random() * 300) + 1);
         randomtop2=Math.floor((Math.random() * 300) + 1);
-        randomtop3=Math.floor((Math.random() * 300) + 1);
+        randomtop3=Math.floor((Math.random() * 300) + 300);
         randomtop4=Math.floor((Math.random() * 300) + 1);
         randomleft1=Math.floor((Math.random() * 600) + 1);
         randomleft2=Math.floor((Math.random() * 600) + 1);
-        randomleft3=Math.floor((Math.random() * 600) + 1);
+        randomleft3=Math.floor((Math.random() * 600) + 600);
         console.log(randomtop1, randomtop2, randomtop3, randomleft1, randomleft2, randomleft3);
         targetPull();
+        $('.target').css('background', 'url("img/david1.png") no-repeat');
     };
     // random();
     
     function targetPull(){
-        TweenMax.fromTo($('.target'), 4, {left:-60, top:randomtop4}, {bezier:[{left:randomleft1, top:randomtop1}, {left:randomleft2, top:randomtop2}, {left:randomleft3, top:randomtop3}], ease:Linear.easeNone, onComplete:random});
+        TweenMax.fromTo($('.target'), 5, {left:-60, top:randomtop4}, {bezier:[{left:randomleft1, top:randomtop1}, {left:randomleft2, top:randomtop2}, {left:randomleft3, top:randomtop3}], ease:Linear.easeNone, onComplete:random});
     };
     
     $('.start').on('click', function(){
@@ -112,6 +113,7 @@ $(document).ready(function(){
             TweenMax.to($('.target'), .4, {top:"300px", ease:Linear.easeOut, onComplete:random});
             hitpoint++;
             $('.hit').html("HIT" + '<br>' + hitpoint);
+            $(this).css({'background': 'url("img/david2.png") no-repeat', 'background-size': 'contain'});
         });
     $('.gungame').on('click',function(){
         misspoint++;

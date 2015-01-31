@@ -396,6 +396,7 @@ body {
         cursor: pointer;
         font-weight: bold;
         margin: 10px auto;
+        padding-top: 3px;
     }
     .station{
         background: #d2c9c4;
@@ -604,10 +605,10 @@ body {
         float: left;
     }
     .target{
-        height: 60px;
+        height: 106px;
         width: 60px;
         position: absolute;
-        background: red;
+        background: url("../img/david1.png") no-repeat;
         float: left;
         border-radius: 40px;
         color: yellow;
@@ -622,6 +623,7 @@ body {
         position: relative;
         float: left;
         background: red;
+        padding-top: 11px;
     }
     .hit{
         height: 80px;
