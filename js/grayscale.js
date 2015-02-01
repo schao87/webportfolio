@@ -65,7 +65,7 @@ $(document).ready(function(){
     }
     function depart(){
         if(doorOpened == false){
-            departing = TweenMax.to($('.train'), 2, {delay:.3, left:"-2000px", ease:Expo.easeIn, onComplete:reset});
+            departing = TweenMax.to($('.train'), 2.5, {delay:.3, left:"-2000px", ease:Expo.easeIn, onComplete:reset});
         }
     }
     $('.doorway').on("click", function(){
@@ -110,7 +110,7 @@ $(document).ready(function(){
         targetPull();
     });
     $('.target').on('click', function(){
-            TweenMax.to($('.target'), .4, {top:"300px", ease:Linear.easeOut, onComplete:random});
+            TweenMax.to($('.target'), .5, {top:"300px", ease:Linear.easeOut, onComplete:random});
             hitpoint++;
             $('.hit').html("HIT" + '<br>' + hitpoint);
             $(this).css({'background': 'url("img/david2.png") no-repeat', 'background-size': 'contain'});

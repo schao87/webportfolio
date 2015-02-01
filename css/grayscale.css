@@ -364,7 +364,7 @@ body {
 
 /****************************************     My Edits      **********************************/
 
-@media(min-width:1199px) {
+/*@media(min-width:980px) {*/
     .thumbnails{
         height: 106px;
         width: 306px;
@@ -624,6 +624,7 @@ body {
         float: left;
         background: red;
         padding-top: 11px;
+        cursor: pointer;
     }
     .hit{
         height: 80px;
@@ -643,7 +644,7 @@ body {
         background: white;
         color: black;
     }
-}
+/*}*/
 
 
 
