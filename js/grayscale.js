@@ -87,21 +87,41 @@ $(document).ready(function(){
     var misspoint = 0;
     // var random1;
     function random(){
-        randomtop1=Math.floor((Math.random() * 300) + 1);
-        randomtop2=Math.floor((Math.random() * 300) + 1);
+        randomtop1=Math.floor((Math.random() * 300));
+        randomtop2=Math.floor((Math.random() * 300));
         randomtop3=Math.floor((Math.random() * 300) + 300);
-        randomtop4=Math.floor((Math.random() * 300) + 1);
-        randomleft1=Math.floor((Math.random() * 600) + 1);
-        randomleft2=Math.floor((Math.random() * 600) + 1);
+        randomtop4=Math.floor((Math.random() * 300));
+        randomleft1=Math.floor((Math.random() * 600));
+        randomleft2=Math.floor((Math.random() * 600));
         randomleft3=Math.floor((Math.random() * 600) + 600);
         console.log(randomtop1, randomtop2, randomtop3, randomleft1, randomleft2, randomleft3);
         targetPull();
-        $('.target').css('background', 'url("img/david1.png") no-repeat');
+        $('.target').css('background', 'url("img/duck.gif") no-repeat');
+        TweenMax.to($('.target'), 0, {rotationY:0});
     };
-    // random();
+    function left2Rotate(){
+        if (randomleft2 < randomleft1){
+            TweenMax.to($('.target'), 0, {rotationY:180});
+            console.log('first left');
+        }
+    };
+    function left3Rotate(){
+        if (randomleft3 > randomleft2){
+                TweenMax.to($('.target'), 0, {rotationY:0});
+                console.log('second left');
+            }
+    };
     
     function targetPull(){
-        TweenMax.fromTo($('.target'), 5, {left:-60, top:randomtop4}, {bezier:[{left:randomleft1, top:randomtop1}, {left:randomleft2, top:randomtop2}, {left:randomleft3, top:randomtop3}], ease:Linear.easeNone, onComplete:random});
+        TweenMax.fromTo($('.target'), 1.6, {left:-60, top:randomtop4}, {bezier:[{left:randomleft1, top:randomtop1}], ease:Linear.easeNone, onComplete:left2});
+    };
+    function left2(){
+        left2Rotate();
+        TweenMax.to($('.target'), 1.6, {bezier:[{left:randomleft2, top:randomtop2}], ease:Linear.easeNone, onComplete:left3});
+    };
+    function left3(){
+        left3Rotate();
+        TweenMax.to($('.target'), 2.5, {bezier:[{left:randomleft3, top:randomtop3}], ease:Linear.easeNone, onComplete:random});
     };
     
     $('.start').on('click', function(){
@@ -113,7 +133,7 @@ $(document).ready(function(){
             TweenMax.to($('.target'), .5, {top:"300px", ease:Linear.easeOut, onComplete:random});
             hitpoint++;
             $('.hit').html("HIT" + '<br>' + hitpoint);
-            $(this).css({'background': 'url("img/david2.png") no-repeat', 'background-size': 'contain'});
+            $(this).css({'background': 'url("img/duck.gif") no-repeat', 'background-size': 'contain'});
         });
     $('.gungame').on('click',function(){
         misspoint++;

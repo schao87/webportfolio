@@ -605,10 +605,10 @@ body {
         float: left;
     }
     .target{
-        height: 106px;
+        height: 54px;
         width: 60px;
         position: absolute;
-        background: url("../img/david1.png") no-repeat;
+        background: url("../img/duck.gif") no-repeat;
         float: left;
         border-radius: 40px;
         color: yellow;
@@ -616,6 +616,14 @@ body {
         font-size: 20px;
         font-weight: bolder;
         top: 60px;
+    }
+    .flip {
+        transform: scale(-1, 1);
+        -moz-transform: scale(-1, 1);
+        -webkit-transform: scale(-1, 1);
+        -o-transform: scale(-1, 1);
+        -khtml-transform: scale(-1, 1);
+        -ms-transform: scale(-1, 1);
     }
     .start{
         height: 40px;
