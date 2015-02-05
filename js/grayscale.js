@@ -85,13 +85,15 @@ $(document).ready(function(){
         $('.gunCont').css('visibility', 'visible');
     });
     function random(){
+        randomtopStart=Math.floor((Math.random() * 300));
         randomtop1=Math.floor((Math.random() * 300));
         randomtop2=Math.floor((Math.random() * 300));
-        randomtop3=Math.floor((Math.random() * 300) + 300);
-        randomtop4=Math.floor((Math.random() * 300));
+        randomtop3=Math.floor((Math.random() * 300));
+        randomtop4=Math.floor((Math.random() * 300)+300);
         randomleft1=Math.floor((Math.random() * 600));
         randomleft2=Math.floor((Math.random() * 600));
-        randomleft3=Math.floor((Math.random() * 600) + 600);
+        randomleft3=Math.floor((Math.random() * 600));
+        randomleft4=Math.floor((Math.random() * 600) + 300);
         console.log(randomtop1, randomtop2, randomtop3, randomleft1, randomleft2, randomleft3);
         targetPull();
         // $('.target').css('background', 'url("img/duck.gif") no-repeat');
@@ -107,10 +109,20 @@ $(document).ready(function(){
         if (randomleft3 > randomleft2){
                 TweenMax.to($('.target'), 0, {rotationY:0});
                 console.log('second left');
+            }else{
+             TweenMax.to($('.target'), 0, {rotationY:180});               
+            }
+    };
+    function left4Rotate(){
+        if (randomleft4 < randomleft3){
+                TweenMax.to($('.target'), 0, {rotationY:180});
+                console.log('second left');
+            }else{
+                TweenMax.to($('.target'), 0, {rotationY:0});
             }
     };
     function targetPull(){
-        TweenMax.fromTo($('.target'), 2.3, {left:-60, top:randomtop4}, {bezier:[{left:randomleft1, top:randomtop1}], ease:Linear.easeNone, onComplete:left2});
+        TweenMax.fromTo($('.target'), 2.3, {left:-60, top:randomtopStart}, {bezier:[{left:randomleft1, top:randomtop1}], ease:Linear.easeNone, onComplete:left2});
     };
     function left2(){
         left2Rotate();
@@ -118,10 +130,13 @@ $(document).ready(function(){
     };
     function left3(){
         left3Rotate();
-        TweenMax.to($('.target'), 2.7, {bezier:[{left:randomleft3, top:randomtop3}], ease:Linear.easeNone, onComplete:random});
+        TweenMax.to($('.target'), 2.7, {bezier:[{left:randomleft3, top:randomtop3}], ease:Linear.easeNone, onComplete:left4});
+    };
+    function left4(){
+        left4Rotate();
+        TweenMax.to($('.target'), 2.7, {bezier:[{left:randomleft4, top:randomtop4}], ease:Linear.easeNone, onComplete:random});
     };
     $('.start').on('click', function(){
-        // targetReset();
         random();
         targetPull();
     });
