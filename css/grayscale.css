@@ -603,6 +603,7 @@ body {
         width: 600px;
         position: relative;
         float: left;
+        visibility: hidden;
     }
     .target{
         height: 54px;
