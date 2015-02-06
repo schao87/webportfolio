@@ -47,13 +47,14 @@ $(document).ready(function(){
     $('.callTrain').on("mouseup", function(){
         TweenMax.to($('.train'), 3, {delay:1, left:"0px", ease:Expo.easeOut});
         $(this).css('background', 'red');
+        $('.train').css('visibility', 'visible');
         buttonHide();
     });
     var doorOpened = false;
     var departing;
 
     function reset(){
-        $('.train').css("left", "1290px");
+        $('.train').css("left", "1290px",'visibility', 'hidden');
         $('.callTrain').css('visibility', 'visible');
     }
     function buttonHide(){
@@ -83,6 +84,7 @@ $(document).ready(function(){
     var misspoint = 0;
     var easter_egg = new Konami(function(){
         $('.gunCont').css('visibility', 'visible');
+        $('.konami').css('visibility', 'hidden');
     });
     function random(){
         randomtopStart=Math.floor((Math.random() * 300));

@@ -425,6 +425,7 @@ body {
         border-radius: 60px 60px 0 0;
         z-index: 99;
         border: 1px solid black;
+        visibility: hidden;
     }
     .doorway{
         /*background:url("../img/interior.jpg") no-repeat;*/
@@ -604,6 +605,15 @@ body {
         position: relative;
         float: left;
         visibility: hidden;
+    }
+    .konami{
+        height: 300px;
+        width: 600px;
+        position: absolute;
+        visibility: visible;
+        color: white;
+        z-index: 1000;
+        border: 1px solid white;
     }
     .target{
         height: 54px;
