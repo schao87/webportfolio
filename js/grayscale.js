@@ -86,6 +86,10 @@ $(document).ready(function(){
         $('.gunCont').css('visibility', 'visible');
         $('.konami').css('visibility', 'hidden');
     });
+    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+        $('.konami').css('visibility', 'hidden');
+        $('.gunCont').css('visibility', 'visible');
+    }
     function random(){
         randomtopStart=Math.floor((Math.random() * 300));
         randomtop1=Math.floor((Math.random() * 300));

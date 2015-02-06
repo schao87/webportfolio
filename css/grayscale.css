@@ -363,7 +363,11 @@ body {
 }
 
 /****************************************     My Edits      **********************************/
-
+@media(max-width:760px ){
+    .portfolio-section{
+        padding-top: 0;
+    }
+}
 /*@media(min-width:980px) {*/
     .thumbnails{
         height: 106px;
