@@ -401,6 +401,7 @@ body {
     .station{
         background: #d2c9c4;
         width: 100%;
+        overflow: hidden;
         /*z-index:0;*/
     }
     .streetName{
