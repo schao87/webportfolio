@@ -281,7 +281,7 @@ a:focus {
 
     #map {
         height: 400px;
-        margin-top: 265px;
+        margin-top: 298px;
     }
 }
 
@@ -367,8 +367,17 @@ body {
     .portfolio-section{
         padding-top: 0;
     }
+    #portfolio{
+        padding-top: 0;
+    }
+    .thumbnails{
+        margin: auto !important;
+    }
 }
 /*@media(min-width:980px) {*/
+    #about{
+        padding-bottom: 103px;
+    }
     .thumbnails{
         height: 106px;
         width: 306px;
