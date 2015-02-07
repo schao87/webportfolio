@@ -100,11 +100,17 @@ $(document).ready(function(){
         randomleft2=Math.floor((Math.random() * 600));
         randomleft3=Math.floor((Math.random() * 600));
         randomleft4=Math.floor((Math.random() * 600) + 300);
-        console.log(randomtop1, randomtop2, randomtop3, randomleft1, randomleft2, randomleft3);
+        console.log(randomleft1, randomleft2, randomleft3, randomleft4);
+        flytime1=(Math.random() * 2)+.6;
+        flytime2=(Math.random() * 2)+.6;
+        flytime3=(Math.random() * 2)+.6;
+        flytime4=(Math.random() * 2)+.6;
+        console.log(flytime1, flytime2, flytime3, flytime4);
         targetPull();
         // $('.target').css('background', 'url("img/duck.gif") no-repeat');
         TweenMax.to($('.target'), 0, {rotationY:0});
     };
+        
     function left2Rotate(){
         if (randomleft2 < randomleft1){
             TweenMax.to($('.target'), 0, {rotationY:180});
@@ -127,20 +133,21 @@ $(document).ready(function(){
                 TweenMax.to($('.target'), 0, {rotationY:0});
             }
     };
+    
     function targetPull(){
-        TweenMax.fromTo($('.target'), 2.3, {left:-60, top:randomtopStart}, {bezier:[{left:randomleft1, top:randomtop1}], ease:Linear.easeNone, onComplete:left2});
+        TweenMax.fromTo($('.target'), flytime1, {left:-60, top:randomtopStart}, {bezier:[{left:randomleft1, top:randomtop1}], ease:Linear.easeNone, onComplete:left2});
     };
     function left2(){
         left2Rotate();
-        TweenMax.to($('.target'), 2.3, {bezier:[{left:randomleft2, top:randomtop2}], ease:Linear.easeNone, onComplete:left3});
+        TweenMax.to($('.target'), flytime2, {bezier:[{left:randomleft2, top:randomtop2}], ease:Linear.easeNone, onComplete:left3});
     };
     function left3(){
         left3Rotate();
-        TweenMax.to($('.target'), 2.7, {bezier:[{left:randomleft3, top:randomtop3}], ease:Linear.easeNone, onComplete:left4});
+        TweenMax.to($('.target'), flytime3, {bezier:[{left:randomleft3, top:randomtop3}], ease:Linear.easeNone, onComplete:left4});
     };
     function left4(){
         left4Rotate();
-        TweenMax.to($('.target'), 2.7, {bezier:[{left:randomleft4, top:randomtop4}], ease:Linear.easeNone, onComplete:random});
+        TweenMax.to($('.target'), flytime4, {bezier:[{left:randomleft4, top:randomtop4}], ease:Linear.easeNone, onComplete:random});
     };
     $('.start').on('click', function(){
         random();
