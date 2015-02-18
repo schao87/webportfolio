@@ -90,6 +90,7 @@ $(document).ready(function(){
         $('.konami').css('visibility', 'hidden');
         $('.gunCont').css('visibility', 'visible');
     }
+    // var random = random();
     function random(){
         randomtopStart=Math.floor((Math.random() * 300));
         randomtop1=Math.floor((Math.random() * 300));
@@ -133,28 +134,42 @@ $(document).ready(function(){
                 TweenMax.to($('.target'), 0, {rotationY:0});
             }
     };
-    
+    var t1;
+    var t2;
+    var t3;
+    var t4;
+
     function targetPull(){
-        TweenMax.fromTo($('.target'), flytime1, {left:-60, top:randomtopStart}, {bezier:[{left:randomleft1, top:randomtop1}], ease:Linear.easeNone, onComplete:left2});
+        t1=TweenMax.fromTo($('.target'), flytime1, {left:-60, top:randomtopStart}, {bezier:[{left:randomleft1, top:randomtop1}], ease:Linear.easeNone, onComplete:left2});
     };
     function left2(){
         left2Rotate();
-        TweenMax.to($('.target'), flytime2, {bezier:[{left:randomleft2, top:randomtop2}], ease:Linear.easeNone, onComplete:left3});
+        t2=TweenMax.to($('.target'), flytime2, {bezier:[{left:randomleft2, top:randomtop2}], ease:Linear.easeNone, onComplete:left3});
     };
     function left3(){
         left3Rotate();
-        TweenMax.to($('.target'), flytime3, {bezier:[{left:randomleft3, top:randomtop3}], ease:Linear.easeNone, onComplete:left4});
+        t3=TweenMax.to($('.target'), flytime3, {bezier:[{left:randomleft3, top:randomtop3}], ease:Linear.easeNone, onComplete:left4});
     };
     function left4(){
         left4Rotate();
-        TweenMax.to($('.target'), flytime4, {bezier:[{left:randomleft4, top:randomtop4}], ease:Linear.easeNone, onComplete:random});
+        t4=TweenMax.to($('.target'), flytime4, {bezier:[{left:randomleft4, top:randomtop4}], ease:Linear.easeNone, onComplete:random});
     };
     $('.start').on('click', function(){
         random();
         targetPull();
+        var rdy = new TimelineLite();
+        rdy.to($('.ready'), 4, {scale:1.5, visibility:'visible'})
+        .to($('.ready'), .1, {display: 'none'})
+        .to($('.go'), 1, {scale:1.5, visibility:'visible'})
+        .to($('.go'), .1, {display: 'none'})
+        .to($('.readyGo'), .1,{display:'none'});
     });
     $('.target').on('click', function(){
-            TweenMax.to($('.target'), .5, {top:"320px", ease:Linear.easeOut, onComplete:random});
+            t1.kill();
+            t2.kill();
+            t3.kill();
+            t4.kill();
+            TweenMax.to($('.target'), .3, {top:"320px", ease:Linear.easeOut, onComplete:random});
             hitpoint++;
             $('.hit').html("HIT" + '<br>' + hitpoint);
             // $(this).css({'background': 'url("img/duck.gif") no-repeat', 'background-size': 'contain'});

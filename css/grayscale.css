@@ -365,13 +365,13 @@ body {
 /****************************************     My Edits      **********************************/
 @media(max-width:760px ){
     .portfolio-section{
-        padding-top: 0;
-    }
-    #portfolio{
-        padding-top: 0;
+        padding-top: 15px !important;
     }
     .thumbnails{
         margin: auto !important;
+    }
+    h2{
+        font-size: 20px !important;
     }
 }
 /*@media(min-width:980px) {*/
@@ -607,10 +607,11 @@ body {
     .gungame{
         height: 300px;
         width: 600px;
-        position: relative;
-        background: blue;
+        position:relative;
+        background: #00ccff;
         float: left;
         overflow: hidden;
+        /*z-index: 1000;*/
     }
     .gunCont{
         overflow: hidden;
@@ -618,6 +619,39 @@ body {
         width: 600px;
         position: relative;
         float: left;
+        /*visibility: hidden;*/
+        visibility: visible;
+        z-index: 99;
+        background-color: transparent;
+    }
+    .readyGo{
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background-color: transparent;
+        z-index: 100;
+        /*background: white;*/
+    }
+    .ready{
+        height: 100%;
+        width: 100%;
+        text-align: center;
+        color: black;
+        font-size: 40px;
+        position: absolute;
+        background-color: transparent;
+        padding-top: 50px;
+        visibility: hidden;
+    }
+    .go{
+        height: 100%;
+        width: 100%;
+        text-align: center;
+        color: black;
+        font-size: 40px;
+        position: absolute;
+        background-color: transparent;
+        padding-top: 50px;
         visibility: hidden;
     }
     .konami{
