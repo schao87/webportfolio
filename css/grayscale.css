@@ -658,6 +658,8 @@ body {
         position: absolute;
         bottom: -75px;
         left: 50px;
+        background-position: center;
+        overflow: visible;
         background: url("../img/dog.gif");
     }
     .go{

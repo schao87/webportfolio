@@ -180,7 +180,7 @@ $(document).ready(function(){
         $('.miss').html("MISS" +'<br>' + misspoint);
         // var badshot = misspoint%2;
         // console.log(badshot+"badshot");
-        if (misspoint%2 == 1){
+        if (misspoint%4 === 1 && misspoint>1){
             dogUp();
         }
     });
@@ -193,16 +193,13 @@ $(document).ready(function(){
         laugh.to($('.dog'), .4, {bottom:35})
         .to($('.dog'), .4, {bottom:-75, delay:3});
     };
-    // function threeMiss(){
-    //     var badshot = misspoint%2;
-    //     console.log(badshot+"badshot");
-    //     if (badshot == 1){
-    //         dogUp();
-    //     }
-    // };
+
     $('.dog').on('click', function(){
-        TweenMax.to($('.dog'), .4, {bottom:-75});
-        misspoint--;
+        var dogDead = new TimelineLite();
+        dogDead.to($('.dog'), 0, {background:"url('./img/dogdead.gif')",width:177,height:160})
+        .to($('.dog'), .2, {bottom:-75}, '+=.6')
+        .to($('.dog'), 0, {background:"url('./img/dog.gif')",width:101,height:120});
+        
     });
 });
 
