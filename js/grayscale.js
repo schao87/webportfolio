@@ -110,6 +110,7 @@ $(document).ready(function(){
         targetPull();
         // $('.target').css('background', 'url("img/duck.gif") no-repeat');
         TweenMax.to($('.target'), 0, {rotationY:0});
+        // threeMiss();
     };
         
     function left2Rotate(){
@@ -158,11 +159,11 @@ $(document).ready(function(){
         random();
         targetPull();
         var rdy = new TimelineLite();
-        rdy.to($('.ready'), 4, {scale:1.5, visibility:'visible'})
-        .to($('.ready'), .1, {display: 'none'})
-        .to($('.go'), 1, {scale:1.5, visibility:'visible'})
-        .to($('.go'), .1, {display: 'none'})
-        .to($('.readyGo'), .1,{display:'none'});
+        rdy.to($('.ready'), 3, {scale:1.5,visibility:"visible",autoAlpha:1})
+        .to($('.ready'), .3, {autoAlpha:0,display: 'none'})
+        .to($('.go'), 1, {scale:1.5,visibility:'visible',autoAlpha:1}, '+=1')
+        .to($('.go'), .3, {display: 'none',autoAlpha:0})
+        .to($('.readyGo'), .1,{display:'none',autoAlpha:0});
     });
     $('.target').on('click', function(){
             t1.kill();
@@ -177,6 +178,31 @@ $(document).ready(function(){
     $('.gungame').on('click',function(){
         misspoint++;
         $('.miss').html("MISS" +'<br>' + misspoint);
+        // var badshot = misspoint%2;
+        // console.log(badshot+"badshot");
+        if (misspoint%2 == 1){
+            dogUp();
+        }
+    });
+    $('.grass').on('click',function(){
+        misspoint++;
+        $('.miss').html("MISS" +'<br>' + misspoint);
+    });
+    function dogUp(){
+        var laugh = new TimelineLite();
+        laugh.to($('.dog'), .4, {bottom:35})
+        .to($('.dog'), .4, {bottom:-75, delay:3});
+    };
+    // function threeMiss(){
+    //     var badshot = misspoint%2;
+    //     console.log(badshot+"badshot");
+    //     if (badshot == 1){
+    //         dogUp();
+    //     }
+    // };
+    $('.dog').on('click', function(){
+        TweenMax.to($('.dog'), .4, {bottom:-75});
+        misspoint--;
     });
 });
 

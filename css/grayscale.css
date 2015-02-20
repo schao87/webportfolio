@@ -624,6 +624,14 @@ body {
         z-index: 99;
         background-color: transparent;
     }
+    .grass{
+        width: 600px;
+        height: 150px;
+        position: absolute;
+        bottom: -70px;
+        z-index: 110;
+        background: url("../img/grass.png");
+    }
     .readyGo{
         position: absolute;
         height: 100%;
@@ -642,6 +650,15 @@ body {
         background-color: transparent;
         padding-top: 50px;
         visibility: hidden;
+    }
+    .dog{
+        height: 120px;
+        width: 101px;
+        z-index: 109;
+        position: absolute;
+        bottom: -75px;
+        left: 50px;
+        background: url("../img/dog.gif");
     }
     .go{
         height: 100%;
@@ -662,6 +679,7 @@ body {
         color: white;
         z-index: 1000;
         border: 1px solid white;
+        background: black;
     }
     .target{
         height: 54px;
