@@ -81,7 +81,11 @@ $(document).ready(function(){
     });
     ///////////////////////////////////// Target game logic ////////////////////////////////////////////
     var hitpoint = 0;
-    var misspoint = 30;
+    var ammoCount = 5;
+    var t1;
+    var t2;
+    var t3;
+    var t4;
     var easter_egg = new Konami(function(){
         $('.gunCont').css('visibility', 'visible');
         $('.konami').css('visibility', 'hidden');
@@ -108,11 +112,8 @@ $(document).ready(function(){
         flytime4=(Math.random() * 2)+.2;
         // console.log(flytime1, flytime2, flytime3, flytime4);
         targetPull();
-        // $('.target').css('background', 'url("img/duck.gif") no-repeat');
         TweenMax.to($('.target'), 0, {rotationY:0});
-        // threeMiss();
-    };
-        
+    };   
     function left2Rotate(){
         if (randomleft2 < randomleft1){
             TweenMax.to($('.target'), 0, {rotationY:180});
@@ -135,11 +136,6 @@ $(document).ready(function(){
                 TweenMax.to($('.target'), 0, {rotationY:0});
             }
     };
-    var t1;
-    var t2;
-    var t3;
-    var t4;
-
     function targetPull(){
         t1=TweenMax.fromTo($('.target'), flytime1, {left:-60, top:randomtopStart}, {bezier:[{left:randomleft1, top:randomtop1}], ease:Linear.easeNone, onComplete:left2});
     };
@@ -155,7 +151,7 @@ $(document).ready(function(){
         left4Rotate();
         t4=TweenMax.to($('.target'), flytime4, {bezier:[{left:randomleft4, top:randomtop4}], ease:Linear.easeNone, onComplete:random});
     };
-    $('.start').on('click', function(){
+    function startGame(){
         random();
         targetPull();
         var rdy = new TimelineLite();
@@ -164,46 +160,82 @@ $(document).ready(function(){
         .to($('.go'), 1, {scale:1.5,visibility:'visible',autoAlpha:1}, '+=1')
         .to($('.go'), .3, {display: 'none',autoAlpha:0})
         .to($('.readyGo'), .1,{display:'none',autoAlpha:0});
-    });
-    $('.target').on('click', function(){
-            t1.kill();
-            t2.kill();
-            t3.kill();
-            t4.kill();
-            TweenMax.to($('.target'), .3, {top:"320px", ease:Linear.easeOut, onComplete:random});
-            hitpoint++;
-            $('.score').html("SCORE" + '<br>' + hitpoint);
-            misspoint--;
-            $('.ammo').html("AMMO" +'<br>' + misspoint);
-            // $(this).css({'background': 'url("img/duck.gif") no-repeat', 'background-size': 'contain'});
-        });
-    $('.gungame').on('click',function(){
-        misspoint--;
-        $('.ammo').html("AMMO" +'<br>' + misspoint);
-        if (misspoint%3 === 0 && misspoint>1){dogUp();}
-        if (misspoint%2 === 0){TweenMax.to($('.dog'), .4, {bottom:-75});}
-    });
-    $('.grass').on('click',function(){
-        misspoint--;
-        $('.ammo').html("AMMO" +'<br>' + misspoint);
-        if (misspoint%3 === 0 && misspoint>1){dogUp();}
-        if (misspoint%2 === 0){TweenMax.to($('.dog'), .4, {bottom:-75});}
-    });
-
+        $('.start').css('visibility','hidden');
+    };
+    function hitTarget(){
+        t1.kill();
+        t2.kill();
+        t3.kill();
+        t4.kill();
+        TweenMax.to($('.target'), .3, {top:"320px", ease:Linear.easeOut, onComplete:random});
+        hitpoint++;
+        $('.score').html("SCORE" + '<br>' + hitpoint);
+        gameover();
+        $('.ammo').html("AMMO" +'<br>' + ammoCount);
+    };
+    function missBkgrd(){
+        gameover();
+        $('.ammo').html("AMMO" +'<br>' + ammoCount);
+        if (ammoCount%3 === 0 && ammoCount>1){dogUp();}
+        if (ammoCount%2 === 0){TweenMax.to($('.dog'), .4, {bottom:-75});}
+    };
     function dogUp(){
         var laugh = new TimelineLite();
         laugh.to($('.dog'), .4, {bottom:35})
         .to($('.dog'), .4, {bottom:-75, delay:3});
     };
-
-    $('.dog').on('click', function(){
+    function killDog(){
         var dogDead = new TimelineLite();
         dogDead.to($('.dog'), 0, {background:"url('./img/dogdead.gif')",width:177,height:160,left:20})
         .to($('.dog'), .2, {bottom:-75}, '+=.5')
         .to($('.dog'), 0, {background:"url('./img/dog.gif')",width:101,height:120,left:50});
-        misspoint--;
-        $('.ammo').html("AMMO" +'<br>' + misspoint);
-        
+        gameover();
+        $('.ammo').html("AMMO" +'<br>' + ammoCount);
+        hitpoint++;
+        $('.score').html("SCORE" + '<br>' + hitpoint);      
+    };
+    function gameover(){
+        if(ammoCount==1){
+            t1.kill();
+            t2.kill();
+            t3.kill();
+            t4.kill();
+            $('.target').css('left','-60px');
+            ammoCount--;
+            var gm = new TimelineLite();
+            gm.to($('.readyGo'), .1,{display:'block',autoAlpha:1})
+            .to($('.gameover'), .1, {scale:1.5,visibility:"visible",autoAlpha:1});
+        }else{
+            ammoCount--;
+        }
+    };
+    function resetGame(){
+        if(ammoCount==0){
+            ammoCount=5;
+            hitpoint=0;
+            $('.gameover').css('visibility','hidden');
+            $('.ammo').html("AMMO" +'<br>' + ammoCount);
+            $('.score').html("SCORE" + '<br>' + hitpoint);
+            $('.start').css('visibility','visible');
+        }
+    };
+    $('.start').on('click', function(){
+        startGame();
+    });
+    $('.reset').on('click', function(){
+        resetGame();
+    });
+    $('.target').on('click', function(){
+        hitTarget();
+    });
+    $('.gameBkgrd').on('click',function(){
+        missBkgrd();
+    });
+    $('.grass').on('click',function(){
+        missBkgrd();
+    });
+    $('.dog').on('click', function(){
+        killDog();
     });
 });
 

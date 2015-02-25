@@ -604,7 +604,7 @@ body {
         position: absolute;
 
     }
-    .gungame{
+    .gameBkgrd{
         height: 300px;
         width: 600px;
         position:relative;
@@ -637,10 +637,10 @@ body {
         height: 100%;
         width: 100%;
         background-color: transparent;
-        z-index: 100;
+        z-index: 1000;
         /*background: white;*/
     }
-    .ready{
+    .ready, .gameover{
         height: 100%;
         width: 100%;
         text-align: center;
@@ -651,7 +651,7 @@ body {
         padding-top: 50px;
         visibility: hidden;
     }
-    .dog{
+   .dog{
         height: 120px;
         width: 101px;
         z-index: 109;
@@ -713,8 +713,18 @@ body {
         padding-top: 11px;
         cursor: pointer;
     }
+    .reset{
+        height: 40px;
+        width: 80px;
+        position: relative;
+        float: left;
+        background: red;
+        padding-top: 11px;
+        cursor: pointer;
+        margin-left: 20px;
+    }
     .score{
-        height: 80px;
+        height: 40px;
         width:80px;
         position: relative;
         float: left;
@@ -723,7 +733,7 @@ body {
         color: black;
     }
     .ammo{
-       height: 80px;
+       height: 40px;
         width:80px;
         position: relative;
         float: left;
