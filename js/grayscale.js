@@ -81,7 +81,7 @@ $(document).ready(function(){
     });
     ///////////////////////////////////// Target game logic ////////////////////////////////////////////
     var hitpoint = 0;
-    var ammoCount = 5;
+    var ammoCount = 30;
     var t1;
     var t2;
     var t3;
@@ -156,10 +156,10 @@ $(document).ready(function(){
         targetPull();
         var rdy = new TimelineLite();
         rdy.to($('.ready'), 3, {scale:1.5,visibility:"visible",autoAlpha:1})
-        .to($('.ready'), .3, {autoAlpha:0,display: 'none'})
+        .to($('.ready'), .3, {autoAlpha:0,visibility: 'hidden'})
         .to($('.go'), 1, {scale:1.5,visibility:'visible',autoAlpha:1}, '+=1')
-        .to($('.go'), .3, {display: 'none',autoAlpha:0})
-        .to($('.readyGo'), .1,{display:'none',autoAlpha:0});
+        .to($('.go'), .3, {visibility: 'hidden',autoAlpha:0})
+        .to($('.readyGo'), .1,{visibility:'hidden',autoAlpha:0});
         $('.start').css('visibility','hidden');
     };
     function hitTarget(){
@@ -176,8 +176,8 @@ $(document).ready(function(){
     function missBkgrd(){
         gameover();
         $('.ammo').html("AMMO" +'<br>' + ammoCount);
-        if (ammoCount%3 === 0 && ammoCount>1){dogUp();}
-        if (ammoCount%2 === 0){TweenMax.to($('.dog'), .4, {bottom:-75});}
+        if (ammoCount%3 === 0 && ammoCount>1 || (ammoCount%3 ===0 && ammoCount%2===0)){dogUp();}
+        if (ammoCount%2 === 0 && ammoCount%3 !==0){TweenMax.to($('.dog'), .4, {bottom:-75});}
     };
     function dogUp(){
         var laugh = new TimelineLite();
@@ -203,7 +203,7 @@ $(document).ready(function(){
             $('.target').css('left','-60px');
             ammoCount--;
             var gm = new TimelineLite();
-            gm.to($('.readyGo'), .1,{display:'block',autoAlpha:1})
+            gm.to($('.readyGo'), .1,{visibility:'visible',autoAlpha:1})
             .to($('.gameover'), .1, {scale:1.5,visibility:"visible",autoAlpha:1});
         }else{
             ammoCount--;
@@ -211,7 +211,7 @@ $(document).ready(function(){
     };
     function resetGame(){
         if(ammoCount==0){
-            ammoCount=5;
+            ammoCount=30;
             hitpoint=0;
             $('.gameover').css('visibility','hidden');
             $('.ammo').html("AMMO" +'<br>' + ammoCount);
