@@ -713,7 +713,7 @@ body {
         padding-top: 11px;
         cursor: pointer;
     }
-    .hit{
+    .score{
         height: 80px;
         width:80px;
         position: relative;
@@ -722,7 +722,7 @@ body {
         background: white;
         color: black;
     }
-    .miss{
+    .ammo{
        height: 80px;
         width:80px;
         position: relative;

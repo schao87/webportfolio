@@ -81,7 +81,7 @@ $(document).ready(function(){
     });
     ///////////////////////////////////// Target game logic ////////////////////////////////////////////
     var hitpoint = 0;
-    var misspoint = 0;
+    var misspoint = 30;
     var easter_egg = new Konami(function(){
         $('.gunCont').css('visibility', 'visible');
         $('.konami').css('visibility', 'hidden');
@@ -101,12 +101,12 @@ $(document).ready(function(){
         randomleft2=Math.floor((Math.random() * 600));
         randomleft3=Math.floor((Math.random() * 600));
         randomleft4=Math.floor((Math.random() * 600) + 300);
-        console.log(randomleft1, randomleft2, randomleft3, randomleft4);
-        flytime1=(Math.random() * 2)+.6;
-        flytime2=(Math.random() * 2)+.6;
-        flytime3=(Math.random() * 2)+.6;
-        flytime4=(Math.random() * 2)+.6;
-        console.log(flytime1, flytime2, flytime3, flytime4);
+        // console.log(randomleft1, randomleft2, randomleft3, randomleft4);
+        flytime1=(Math.random() * 2)+.2;
+        flytime2=(Math.random() * 2)+.2;
+        flytime3=(Math.random() * 2)+.2;
+        flytime4=(Math.random() * 2)+.2;
+        // console.log(flytime1, flytime2, flytime3, flytime4);
         targetPull();
         // $('.target').css('background', 'url("img/duck.gif") no-repeat');
         TweenMax.to($('.target'), 0, {rotationY:0});
@@ -116,13 +116,13 @@ $(document).ready(function(){
     function left2Rotate(){
         if (randomleft2 < randomleft1){
             TweenMax.to($('.target'), 0, {rotationY:180});
-            console.log('first left');
+            // console.log('first left');
         }
     };
     function left3Rotate(){
         if (randomleft3 > randomleft2){
                 TweenMax.to($('.target'), 0, {rotationY:0});
-                console.log('second left');
+                // console.log('second left');
             }else{
              TweenMax.to($('.target'), 0, {rotationY:180});               
             }
@@ -130,7 +130,7 @@ $(document).ready(function(){
     function left4Rotate(){
         if (randomleft4 < randomleft3){
                 TweenMax.to($('.target'), 0, {rotationY:180});
-                console.log('second left');
+                // console.log('second left');
             }else{
                 TweenMax.to($('.target'), 0, {rotationY:0});
             }
@@ -172,22 +172,24 @@ $(document).ready(function(){
             t4.kill();
             TweenMax.to($('.target'), .3, {top:"320px", ease:Linear.easeOut, onComplete:random});
             hitpoint++;
-            $('.hit').html("HIT" + '<br>' + hitpoint);
+            $('.score').html("SCORE" + '<br>' + hitpoint);
+            misspoint--;
+            $('.ammo').html("AMMO" +'<br>' + misspoint);
             // $(this).css({'background': 'url("img/duck.gif") no-repeat', 'background-size': 'contain'});
         });
     $('.gungame').on('click',function(){
-        misspoint++;
-        $('.miss').html("MISS" +'<br>' + misspoint);
-        // var badshot = misspoint%2;
-        // console.log(badshot+"badshot");
-        if (misspoint%4 === 1 && misspoint>1){
-            dogUp();
-        }
+        misspoint--;
+        $('.ammo').html("AMMO" +'<br>' + misspoint);
+        if (misspoint%3 === 0 && misspoint>1){dogUp();}
+        if (misspoint%2 === 0){TweenMax.to($('.dog'), .4, {bottom:-75});}
     });
     $('.grass').on('click',function(){
-        misspoint++;
-        $('.miss').html("MISS" +'<br>' + misspoint);
+        misspoint--;
+        $('.ammo').html("AMMO" +'<br>' + misspoint);
+        if (misspoint%3 === 0 && misspoint>1){dogUp();}
+        if (misspoint%2 === 0){TweenMax.to($('.dog'), .4, {bottom:-75});}
     });
+
     function dogUp(){
         var laugh = new TimelineLite();
         laugh.to($('.dog'), .4, {bottom:35})
@@ -196,9 +198,11 @@ $(document).ready(function(){
 
     $('.dog').on('click', function(){
         var dogDead = new TimelineLite();
-        dogDead.to($('.dog'), 0, {background:"url('./img/dogdead.gif')",width:177,height:160})
-        .to($('.dog'), .2, {bottom:-75}, '+=.6')
-        .to($('.dog'), 0, {background:"url('./img/dog.gif')",width:101,height:120});
+        dogDead.to($('.dog'), 0, {background:"url('./img/dogdead.gif')",width:177,height:160,left:20})
+        .to($('.dog'), .2, {bottom:-75}, '+=.5')
+        .to($('.dog'), 0, {background:"url('./img/dog.gif')",width:101,height:120,left:50});
+        misspoint--;
+        $('.ammo').html("AMMO" +'<br>' + misspoint);
         
     });
 });
