@@ -205,6 +205,7 @@ $(document).ready(function(){
             var gm = new TimelineLite();
             gm.to($('.readyGo'), .1,{visibility:'visible',autoAlpha:1})
             .to($('.gameover'), .1, {scale:1.5,visibility:"visible",autoAlpha:1});
+            $('.enterBtn').css('visibility','visible');
         }else{
             ammoCount--;
         }
@@ -217,6 +218,7 @@ $(document).ready(function(){
             $('.ammo').html("AMMO" +'<br>' + ammoCount);
             $('.score').html("SCORE" + '<br>' + hitpoint);
             $('.start').css('visibility','visible');
+            $('.enterBtn').css('visibility','hidden');
         }
     };
     $('.start').on('click', function(){
@@ -236,6 +238,74 @@ $(document).ready(function(){
     });
     $('.dog').on('click', function(){
         killDog();
+    });
+    $('.enterBtn').on('click', function(){
+        resetGame();
+    });
+    var scores =[
+        {
+            'score': 20,
+            'name': 'abc'
+        },
+        {
+            'score': 22,
+            'name': 'bbb'
+        },
+        {
+            'score': 23,
+            'name': 'ccc'
+        },
+        {
+            'score': 11,
+            'name': 'ccc'
+        },
+        {
+            'score': 44,
+            'name': 'ccc'
+        },
+        {
+            'score': 55,
+            'name': 'ccc'
+        },
+        {
+            'score': 66,
+            'name': 'ccc'
+        },
+        {
+            'score': 44,
+            'name': 'ccc'
+        },
+        {
+            'score': 55,
+            'name': 'ccc'
+        },
+        {
+            'score': 66,
+            'name': 'ccc'
+        }
+    ]
+    var scores1 = [
+       scores[0].score,
+       scores[1].score,
+       scores[2].score,
+       scores[3].score,
+       scores[4].score,
+       scores[5].score,
+       scores[6].score,
+       scores[7].score,
+       scores[8].score,
+       scores[9].score
+    ]
+    console.log(scores1);
+    // scores.sort(function(a, b){return b-a});
+    // console.log(scores[0].score.val());
+    $.each(scores, function(i,value){
+        scores1.sort(function(a,b){return b-a});
+        var name = scores[i].name;
+        var score = scores[i].score; 
+        $('.score' + i).append(name+' '+score);
+        console.log(name, score );
+        
     });
 });
 

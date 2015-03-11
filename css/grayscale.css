@@ -723,6 +723,14 @@ body {
         cursor: pointer;
         margin-left: 20px;
     }
+    .enterBtn{
+        background-color: red;
+        color: black;
+        position: absolute;
+        height: 40px;
+        z-index: 1001;
+        visibility: hidden;
+    }
     .score{
         height: 40px;
         width:80px;
