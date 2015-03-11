@@ -205,6 +205,7 @@ $(document).ready(function(){
             var gm = new TimelineLite();
             gm.to($('.readyGo'), .1,{visibility:'visible',autoAlpha:1})
             .to($('.gameover'), .1, {scale:1.5,visibility:"visible",autoAlpha:1});
+            $('.enterBtn').css('visibility','visible');
         }else{
             ammoCount--;
         }
@@ -217,6 +218,7 @@ $(document).ready(function(){
             $('.ammo').html("AMMO" +'<br>' + ammoCount);
             $('.score').html("SCORE" + '<br>' + hitpoint);
             $('.start').css('visibility','visible');
+            $('.enterBtn').css('visibility','hidden');
         }
     };
     $('.start').on('click', function(){
