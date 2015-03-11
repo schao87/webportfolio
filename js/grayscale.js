@@ -205,28 +205,28 @@ $(document).ready(function(){
             var gm = new TimelineLite();
             gm.to($('.readyGo'), .1,{visibility:'visible',autoAlpha:1})
             .to($('.gameover'), .1, {scale:1.5,visibility:"visible",autoAlpha:1});
+            $('.sessionScore').html("Score: " + hitpoint).css('visibility','visible');
             $('.enterBtn').css('visibility','visible');
         }else{
             ammoCount--;
         }
     };
     function resetGame(){
-        if(ammoCount==0){
-            ammoCount=30;
-            hitpoint=0;
-            $('.gameover').css('visibility','hidden');
-            $('.ammo').html("AMMO" +'<br>' + ammoCount);
-            $('.score').html("SCORE" + '<br>' + hitpoint);
-            $('.start').css('visibility','visible');
-            $('.enterBtn').css('visibility','hidden');
-        }
+        ammoCount=30;
+        hitpoint=0;
+        $('.gameover').css('visibility','hidden');
+        $('.ammo').html("AMMO" +'<br>' + ammoCount);
+        $('.score').html("SCORE" + '<br>' + hitpoint);
+        $('.start').css('visibility','visible');
+        $('.enterBtn').css('visibility','hidden');
+        $('.sessionScore').css('visibility','hidden');
     };
     $('.start').on('click', function(){
         startGame();
     });
-    $('.reset').on('click', function(){
-        resetGame();
-    });
+    // $('.reset').on('click', function(){
+    //     resetGame();
+    // });
     $('.target').on('click', function(){
         hitTarget();
     });

@@ -724,11 +724,13 @@ body {
         margin-left: 20px;
     }
     .enterBtn{
-        background-color: red;
-        color: black;
-        position: absolute;
         height: 40px;
-        z-index: 1001;
+        width: 80px;
+        position: relative;
+        background: red;
+        padding-top: 11px;
+        cursor: pointer;
+        margin: 120px auto;
         visibility: hidden;
     }
     .score{
@@ -748,6 +750,22 @@ body {
         margin-left: 20px; 
         background: white;
         color: black;
+    }
+    .scoreboard{
+        background-color: white;
+        color: black;
+        height: 300px;
+        font-size: 18px;
+    }
+    .sessionScore{
+        color: black;
+        font-size: 20px;
+        top: 70px;
+        height: 30px;
+        width: 100%;
+        text-align: center;
+        visibility: hidden;
+        position: absolute;
     }
 /*}*/
 
