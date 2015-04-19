@@ -767,6 +767,118 @@ body {
         visibility: hidden;
         position: absolute;
     }
+    /******************************3d printer*********************************/
+    .printer{
+    width: 600px;
+    height: 300px;
+    background: #2b2b2b;
+    color: white;
+    margin-top: 50px
+}
+.repBody{
+    width: 300px;
+    height: 200px;
+    background: black;
+    border-top-left-radius:30px; 
+    border-top-right-radius: 30px;
+    margin: 40px 145px;
+    position: absolute;
+}
+.repInner{
+    background: #595959;
+    height: 120px;
+    width: 260px;
+    position: absolute;
+    margin: 60px 20px 0px;
+}
+.knobLed{
+    height: 29px;
+    width: 29px;
+    background: white;
+    border-radius: 20px;
+    position: absolute;
+    margin: 12px 0 0 218px;
+    opacity: 0;
+}
+.knob{
+    height: 25px;
+    width: 25px;
+    background: gray;
+    border-radius: 20px;
+    position: absolute;
+    opacity: 100;
+    margin: 14px 0 0 220px;
+}
+.screen{
+    height: 30px;
+    width: 50px;
+    position: absolute;
+    margin: 10px 0 0 160px;
+    background: #B3D5E8;
+    opacity: 0;
+}
+.mbLogo{
+    height: 15px;
+    font-size: 11px;
+    color: white;
+    position: absolute;
+    bottom: 3px;
+    right: 25px;
+}
+.zstage{
+    height: 38px;
+    width: 86px;
+    background: black;
+    margin-top: 50px;
+    position: relative;
+}
+.redLogo{
+    color: red;
+    height: 23px;
+    width: 23px;
+    position: relative;
+    border: 2px solid red;
+    border-radius: 21px;
+    margin: 0 auto -13px;
+    padding: 0 2px;
+    top: 8px;
+}
+.buildplate{
+    height: 10px;
+    width: 140px;
+    background: black;
+    margin-left: -25px;
+    position: relative;
+    top: 28px;
+}
+.carriage{
+    height: 30px;
+    width: 30px;
+    background: black;
+    border: 1px solid gray;
+    border-top: 0;
+    position: relative;
+    margin:0 auto;
+    z-index: 100;
+}
+.nozzle{
+    position: relative;
+    margin:0 auto;
+    background: yellow;
+    height: 5px;
+    width: 5px;
+    top: 30px
+}
+.bunny{
+    height: 96px;
+    width: 97px;
+    position: absolute;
+    bottom: 0;
+}
+.slice{
+    display: block;
+    visibility: hidden;
+}
 /*}*/
 
 
