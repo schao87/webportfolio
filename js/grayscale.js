@@ -184,9 +184,11 @@ $(document).ready(function(){
         laugh.to($('.dog'), .4, {bottom:35})
         .to($('.dog'), .4, {bottom:-75, delay:3});
     };
+    var deadgif = 'url(./img/dogdead.gif)';
     function killDog(){
+        
         var dogDead = new TimelineLite();
-        dogDead.to($('.dog'), 0, {background:"url('./img/dogdead.gif')",width:177,height:160,left:20})
+        dogDead.to($('.dog'), 0, {background:deadgif,width:177,height:160,left:20})
         .to($('.dog'), .2, {bottom:-75}, '+=.5')
         .to($('.dog'), 0, {background:"url('./img/dog.gif')",width:101,height:120,left:50});
         gameover();
@@ -315,7 +317,7 @@ $(document).ready(function(){
                 .to($('.knob'), 0, {pointerEvents:'none'})
                 .to($('.screen'), .2, {opacity:"1", ease:Linear.easeNone})
                 .to($('.slice'), 0, {visibility:'hidden'})
-                .to($('.zstage'), 2, {marginTop:"-30px", ease:Linear.easeNone,delay:.4})
+                .to($('.zstage'), 2, {marginTop:"-24px", ease:Linear.easeNone,delay:.4})
                 .to($('.carriage'), 1, {marginLeft:"95px", ease:Linear.easeNone, delay:.2})
                 .to($('.carriage'), 1.2, {marginLeft:"158px", ease:Linear.easeNone, onComplete:carriageMove});
         }
@@ -323,34 +325,34 @@ $(document).ready(function(){
             var move = new TimelineLite();
             move.to($('.carriage'), 2.5, {marginLeft:"95px", ease:Linear.easeNone})
                 .to($('.b1'), 0, {visibility:"visible"})
-                .to($('.zstage'), .2, {marginTop:"-22px", ease:Linear.easeNone})
+                .to($('.zstage'), .2, {marginTop:"-16px", ease:Linear.easeNone})
                 .to($('.carriage'), 2.5, {marginLeft:"158px", ease:Linear.easeNone})
                 .to($('.b2'), 0, {visibility:"visible"})
-                .to($('.zstage'), .2, {marginTop:"-14px", ease:Linear.easeNone})
+                .to($('.zstage'), .2, {marginTop:"-8px", ease:Linear.easeNone})
                 .to($('.carriage'), 2.5, {marginLeft:"95px", ease:Linear.easeNone})
                 .to($('.b3'), 0, {visibility:"visible"})
-                .to($('.zstage'), .2, {marginTop:"-6px", ease:Linear.easeNone})
+                .to($('.zstage'), .2, {marginTop:"0px", ease:Linear.easeNone})
                 .to($('.carriage'), 2.5, {marginLeft:"158px", ease:Linear.easeNone})
                 .to($('.b4'), 0, {visibility:"visible"})
-                .to($('.zstage'), .2, {marginTop:"2px", ease:Linear.easeNone})
+                .to($('.zstage'), .2, {marginTop:"8px", ease:Linear.easeNone})
                 .to($('.carriage'), 2.5, {marginLeft:"80px", ease:Linear.easeNone})
                 .to($('.b5'), 0, {visibility:"visible"})
-                .to($('.zstage'), .2, {marginTop:"10px", ease:Linear.easeNone})
+                .to($('.zstage'), .2, {marginTop:"16px", ease:Linear.easeNone})
                 .to($('.carriage'), 2.5, {marginLeft:"158px", ease:Linear.easeNone})
                 .to($('.b6'), 0, {visibility:"visible"})
-                .to($('.zstage'), .2, {marginTop:"18px", ease:Linear.easeNone})
+                .to($('.zstage'), .2, {marginTop:"24px", ease:Linear.easeNone})
                 .to($('.carriage'), 2.5, {marginLeft:"80px", ease:Linear.easeNone})
                 .to($('.b7'), 0, {visibility:"visible"})
-                .to($('.zstage'), .2, {marginTop:"26px", ease:Linear.easeNone})
+                .to($('.zstage'), .2, {marginTop:"32px", ease:Linear.easeNone})
                 .to($('.carriage'), 1.5, {marginLeft:"100px", ease:Linear.easeNone})
                 .to($('.b8'), 0, {visibility:"visible"})
-                .to($('.zstage'), .2, {marginTop:"34px", ease:Linear.easeNone})
+                .to($('.zstage'), .2, {marginTop:"40px", ease:Linear.easeNone})
                 .to($('.carriage'), 1, {marginLeft:"80px", ease:Linear.easeNone})
                 .to($('.b9'), 0, {visibility:"visible"})
-                .to($('.zstage'), .2, {marginTop:"42px", ease:Linear.easeNone})
+                .to($('.zstage'), .2, {marginTop:"48px", ease:Linear.easeNone})
                 .to($('.carriage'), 1, {marginLeft:"110px", ease:Linear.easeNone})
                 .to($('.b10'), 0, {visibility:"visible"})
-                .to($('.zstage'), .2, {marginTop:"50px", ease:Linear.easeNone})
+                .to($('.zstage'), .2, {marginTop:"56px", ease:Linear.easeNone})
                 .to($('.carriage'), 1, {marginLeft:"85px", ease:Linear.easeNone})
                 .to($('.b11'), 0, {visibility:"visible"})
                 .to($('.carriage'), 1, {marginLeft:"121px", ease:Linear.easeNone})
