@@ -80,6 +80,7 @@ $(document).ready(function(){
     });
     ///////////////////////////////////// Target game logic ////////////////////////////////////////////
     var hitpoint = 0;
+    var deadgif = 'url(./img/dogdead.gif)';
     var ammoCount = 30;
     var t1;
     var t2;
@@ -183,7 +184,7 @@ $(document).ready(function(){
         laugh.to($('.dog'), .4, {bottom:35})
         .to($('.dog'), .4, {bottom:-75, delay:3});
     };
-    var deadgif = 'url(./img/dogdead.gif)';
+    
     function killDog(){
         
         var dogDead = new TimelineLite();
