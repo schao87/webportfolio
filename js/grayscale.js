@@ -55,6 +55,7 @@ $(document).ready(function(){
 
     function reset(){
         $('.train').css("left", "1290px",'visibility', 'hidden');
+        $('.doorway').css('pointer-events', 'auto');
         $('.callTrain').css('visibility', 'visible');
     }
     function buttonHide(){
@@ -62,6 +63,7 @@ $(document).ready(function(){
     }
     function depart(){
         if(doorOpened == false){
+            TweenMax.to($('.doorway'), 0, {pointerEvents:'none'});
             departing = TweenMax.to($('.train'), 2.5, {delay:.3, left:"-2000px", ease:Expo.easeIn, onComplete:reset});
         }
     }
@@ -70,13 +72,10 @@ $(document).ready(function(){
             TweenMax.to($('.leftdoor'), 1.5, {left:"-75px", ease:Linear.easeIn});
             TweenMax.to($('.rightdoor'), 1.5, {right:"-75px", ease:Linear.easeIn});
             doorOpened = true;
-            departing.kill();//stops depart function
-            console.log("door opened");
         }else{
             doorOpened = false;
             TweenMax.to($('.leftdoor'), 1.5, {left:"0px", ease:Linear.easeIn, onComplete:depart});
             TweenMax.to($('.rightdoor'), 1.5, {right:"0px", ease:Linear.easeIn});
-            console.log("door closed"); 
         }
     });
     ///////////////////////////////////// Target game logic ////////////////////////////////////////////
@@ -309,7 +308,7 @@ $(document).ready(function(){
         console.log(name, score );
         
     });
-
+// ***********************   printer   *******************************************
     $('.knob').on('click', function(){
         function stageUp(){
             var up = new TimelineLite();
