@@ -5,6 +5,7 @@
  */
 $(document).ready(function(){
 // jQuery to collapse the navbar on scroll
+    new WOW().init();
     $(window).scroll(function() {
         if ($(".navbar").offset().top > 50) {
             $(".navbar-fixed-top").addClass("top-nav-collapse");
@@ -362,6 +363,13 @@ $(document).ready(function(){
         stageUp();
     })
 // *********************** optimus ***************************
+    var vehicle;
+    function truck(){
+        vehicle = true;
+    };
+    function robot(){
+        vehicle = false;
+    }
     var prime = new TimelineMax();
         prime.to($(".forearm"), .4, {marginTop:'-35px', delay: 1, ease: Bounce.easeOut})
             .to($('.hands'), .4, {marginTop:'-35px', ease: Bounce.easeOut})
@@ -387,10 +395,17 @@ $(document).ready(function(){
             .to($('.arms'), .4, {marginTop: '226px', ease: Bounce.easeOut}, 'bounceUp')
             .to($('.head'), .4, {marginTop: '300px', ease: Bounce.easeOut}, 'bounceUp')
             .to($('.thighs'), .4, {marginTop: '58px', ease: Bounce.easeOut}, 'bounceUp')
-            .to($('.lights'), .4, {opacity: '1'});
-
+            .to($('.lights'), .4, {opacity: '1', onComplete:truck});
+    
+    
     $('.wrap').on('click', function(){
-        prime.restart();
+        if(vehicle == true){
+            prime.reverse();
+            robot();
+        }else if(vehicle == false){
+            prime.play();
+            truck();
+        }
     });
 });
 
