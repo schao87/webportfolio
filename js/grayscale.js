@@ -371,7 +371,7 @@ $(document).ready(function(){
         vehicle = false;
     }
     var prime = new TimelineMax();
-        prime.to($(".forearm"), .4, {marginTop:'-35px', delay: 1, ease: Bounce.easeOut})
+        prime.to($(".forearm"), .4, {marginTop:'-35px', delay: .5, ease: Bounce.easeOut})
             .to($('.hands'), .4, {marginTop:'-35px', ease: Bounce.easeOut})
             .to($('.abs'), .4, {borderLeft: '0', borderRight: '0', width: '158px', ease: Bounce.easeOut}, 'widenUp')
             .to($('.redAbs'), .41, {width: '158px', ease: Bounce.easeOut}, 'widenUp')
