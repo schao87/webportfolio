@@ -399,10 +399,11 @@ $(document).ready(function(){
     
     
     $('.wrap').on('click', function(){
+        console.log('hi');
         if(vehicle == true){
             prime.reverse();
             robot();
-        }else if(vehicle == false){
+        }else{
             prime.play();
             truck();
         }
