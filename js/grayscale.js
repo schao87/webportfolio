@@ -399,7 +399,6 @@ $(document).ready(function(){
     
     
     $('.wrap').on('click', function(){
-        console.log('hi');
         if(vehicle == true){
             prime.reverse();
             robot();
