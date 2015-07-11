@@ -1,0 +1,372 @@
+.torso{
+  width: 160px; 
+  float: left;
+  height: 400px;
+  /*position: relative;*/
+  position: absolute;
+  margin-left: 81px;
+}
+.torsoTop{
+  position: absolute;
+}
+.wrap{
+  width: 320px;
+  height: 485px;
+  position: relative;
+}
+@media(min-width: 768px){
+  .wrap{
+    margin-left: 10%;
+  }
+}
+@media(min-width: 1024px){
+  .wrap{
+    margin-left: 15%;
+  }
+}
+.warehouse{
+  background: url(../img/warehouse.jpg);
+  background-position: 0px -200px;
+}
+.bodyWrap{
+  width: 320px;
+  height: 415px;
+  position: absolute;
+  margin-top: 70px;
+}
+.head{
+  background: url(../img/Optimus.png);
+  background-repeat: no-repeat;
+  width: 61px;
+  background-size: contain;
+  margin: 0 130px;
+  display: block;
+  height: 70px;
+  position: absolute;
+}
+.rightArm{
+  margin-left: 21px;
+}
+.rightArm, .leftArm{
+  width:60px;
+  height: 210px;
+  float: left;
+}
+.leftArm{
+  float: right;
+  margin-right: 19px;
+}
+.shoulder{
+  width: 60px;
+  height: 68px;
+  background: #C21718;
+  border: 1px solid black;
+  border-radius: 5px;
+  position: relative;
+  z-index:7;
+}
+.shoulder img{
+  display: block;
+  position: relative;
+  margin: -40px 2px;
+}
+.stack{
+  height: 83px;
+  width: 11px;
+  background: #b2b2b2;
+  position: relative;
+  border: 1px solid black;
+  border-radius: 3px;
+}
+.rightstack{
+  margin-left: -12px;
+  margin-top: -36px;
+}
+.leftstack{
+  margin-left: 59px;
+  margin-top: -36px;
+}
+.bicep{
+  width: 47px;
+  height: 20px;
+  background: #c9c9c9;
+  margin: 0 6px;
+  border-bottom-right-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+.forearm{
+  width: 52px;
+  height: 85px;
+  background: #C21718;
+  border: 1px solid black;
+  margin: 0px 3px;
+  border-radius: 5px;
+  position: relative;
+  z-index: 6;
+}
+.righthand{
+  height:35px;
+  width:35px;
+  background: #3C4CB8;
+  margin-left: 8px;
+  border-radius: 2px 2px 8px 12px;
+  z-index: 5;
+}
+.rightThumb{
+  height: 25px;
+  width: 15px;
+  background: #3C4CB8;
+  margin-left: 29px;
+  position: relative;
+  /* float: left; */
+  border-bottom-right-radius: 7px;
+}
+.lefthand{
+  height:35px;
+  width:35px;
+  background: #3C4CB8;
+  margin-left: 18px;
+  border-radius: 2px 2px 12px 8px;
+}
+.leftThumb{
+  height: 25px;
+  width: 15px;
+  background: #3C4CB8;
+  margin-left: -9px;
+  position: relative;
+  /* float: left; */
+  border-bottom-left-radius: 7px;
+}
+.abs{
+  height: 60px;
+  width: 148px;
+  border-top: 30px solid #c9c9c9;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  position: relative;
+  z-index: 50;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+.redAbs{
+  position: absolute;
+  height: 30px;
+  width: 128px;
+  background: #C21718;
+}
+.grille{
+  width: 49px;
+  height: 60px;
+  background: #b2b2b2;
+  position: relative;
+  margin: -30px auto;
+  border: 1px solid black;
+  border-top: 0;
+}
+.lines{
+  width: 48px;
+  height:5px;
+  position: relative;
+  border-bottom: 1px solid black;
+}
+.chest{
+  height: 68px;
+  width: 160px;
+  border: 1px solid black;
+  background: #C21718;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  position: relative;
+  z-index: 50;
+}
+.window{
+  height: 50px;
+  width: 58px;
+  background: #B3BBDF;
+  position: relative;
+  float: left;
+  margin: 10px 10px;
+  border-radius: 3px;
+}
+.pelvis{
+  width: 140px;
+  height: 45px;
+  position: relative;
+  background: #c9c9c9;
+  z-index: 30;
+  margin: 0 auto;
+  border-radius: 0 0 4px 4px;
+  border: 1px solid black;
+}
+.reflectors{
+  height: 10px;
+  width: 30px;
+  background: yellow;
+  position: relative;
+  float: left;
+  margin: 4px 19px;
+}
+.lights{
+  position: absolute;
+  background: yellow;
+  width: 30px;
+  height: 20px;
+  top: 6px;
+  border-radius: 4px;
+  opacity: 0;
+}
+.rgtLight{
+  left: 5px;
+}
+.lftLight{
+  right: 5px;
+}
+.leg{
+  width: 80px;
+  float: left;
+  position: absolute;
+  margin-top: 173px;
+}
+.leftLeg{
+  margin-left: 80px;
+}
+.thighs{
+  width: 58px;
+  height: 75px;
+  background: #c9c9c9;
+  float: left;
+  border-radius: 4px 4px 0 0;
+  margin: 0px 11px;
+  border: 1px solid black;
+  position: absolute;
+}
+.calves{
+  width: 70px;
+  height: 160px;
+  background: #3C4CB8;
+  float: left;
+  position: absolute;
+  margin: 75px 5px 0;
+  border-radius: 2px;
+}
+.calfgrille{
+  width: 52px;
+  height: 60px;
+  border: 1px solid black;
+  margin: 65px 9px 0;
+}
+.calflines{
+  width: 50px;
+  height: 10px;
+  background: #b2b2b2;
+  border-bottom: 1px solid black;
+}
+.feet{
+  width: 50px;
+  height: 25px;
+  background: #3C4CB8;
+  border: 1px solid black;
+  position: relative;
+  float: left;
+  margin: 216px 15px 0;
+  border-radius: 2px;
+}
+.tires{
+  height: 20px;
+  width: 30px;
+  background: black;
+  bottom: 0;
+  position: absolute;
+  display: none;
+  bottom: 0px;
+  border-radius: 2px;
+}
+.leftTire{
+  margin: 0 209px;
+}
+.rightTire{
+  margin: 0 83px;
+}
+.navbar{
+  margin-bottom: 0px;
+}
+.padOff{
+  padding: 0;
+}
+.divider{
+  height: 44px;
+  border-top: 1px solid #bababa;
+}
+.primeHero{
+  height: 485px;
+  color: white;
+  background-color: #4883A1;
+  background: rgb(60,110,135);
+  background: -moz-linear-gradient(left, rgba(60,110,135,1) 0%, rgba(83,136,160,1) 41%, rgba(83,136,160,1) 60%, rgba(62,119,149,1) 100%);
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(60,110,135,1)), color-stop(41%,rgba(83,136,160,1)), color-stop(60%,rgba(83,136,160,1)), color-stop(100%,rgba(62,119,149,1)));
+  background: -webkit-linear-gradient(left, rgba(60,110,135,1) 0%,rgba(83,136,160,1) 41%,rgba(83,136,160,1) 60%,rgba(62,119,149,1) 100%);
+  background: -o-linear-gradient(left, rgba(60,110,135,1) 0%,rgba(83,136,160,1) 41%,rgba(83,136,160,1) 60%,rgba(62,119,149,1) 100%);
+  background: -ms-linear-gradient(left, rgba(60,110,135,1) 0%,rgba(83,136,160,1) 41%,rgba(83,136,160,1) 60%,rgba(62,119,149,1) 100%);
+  background: linear-gradient(to right, rgba(60,110,135,1) 0%,rgba(83,136,160,1) 41%,rgba(83,136,160,1) 60%,rgba(62,119,149,1) 100%);
+}
+.primeHero h2{
+  font-family: 'officina';
+  color: white;
+  display: block;
+  margin: 2px;
+  float: left;
+  font-size: 35px;
+}
+.primeLogo, .primeHero h3, .primeHero h4, .primeHero h5{
+  margin: 10px;
+  float: left;
+  color: white;
+}
+.primeLogo img{
+  margin: 29px 0px 0 -53px;
+  position: absolute;
+}
+.primeHero h3, .reliable h3, .playlist h3{
+  display: block;
+  font-size: 35px;
+}
+.primeBtn{
+  display: inline-block;
+  color: black !important;
+  height: 50px;
+  width: 150px;
+  border-radius: 4px;
+  border-color: #a88734 #9c7e31 #846a29;
+  background: #f0c14b;
+  float: left;
+  font-size: 20px;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none !important;
+  padding: .5em 1em;
+  margin: 20px 27%;
+}
+.primetruck{
+  overflow: hidden;
+}
+.reliable h3, .playlist h3{
+  margin: 10px;
+}
+@media(min-width: 768px){
+  .iphone{
+    margin-left: 10%;
+  }
+}
+@media(min-width: 1024px){
+  .iphone{
+    margin-left: 20%;
+  }
+}
+.reliable h4, .playlist h4{
+  color: black;
+  margin: 10px;
+  float: left;
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 20px;
+}
