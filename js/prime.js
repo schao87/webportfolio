@@ -20,7 +20,7 @@
             .to($('.arms'), .4, {marginTop: '75px', ease: Bounce.easeOut}, 'dropDown')
             .to($('.head'), .4, {marginTop: '145px', ease: Bounce.easeOut}, 'dropDown')
             .to($('.torsoTop'), .4, {marginTop: '242px', ease: Bounce.easeOut}, 'dropDown2')
-            .to($('.arms'), .22, {marginTop: '242px', ease: Power2.easeOut}, 'dropDown2')
+            .to($('.arms'), .28, {marginTop: '242px', ease: Power2.easeOut}, 'dropDown2')
             .to($('.head'), .4, {marginTop: '316px', ease: Bounce.easeOut}, 'dropDown2')
             .to($('.thighs'), .4, {marginTop: '74px', ease: Bounce.easeOut}, 'dropDown2')
             .to($('.leg'), 0, {display: 'none'})
