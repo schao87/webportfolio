@@ -393,6 +393,9 @@ body {
 #about{
     padding-bottom: 103px;
 }
+.introP{
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+}
 .thumbnails{
     height: 106px;
     width: 306px;
