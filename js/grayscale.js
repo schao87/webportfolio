@@ -91,10 +91,10 @@ $(document).ready(function(){
     var t2;
     var t3;
     var t4;
-    var easter_egg = new Konami(function(){
-        $('.gunCont').css('visibility', 'visible');
-        $('.konami').css('visibility', 'hidden');
-    });
+    // var easter_egg = new Konami(function(){
+    //     $('.gunCont').css('visibility', 'visible');
+    //     $('.konami').css('visibility', 'hidden');
+    // });
     if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
         $('.konami').css('visibility', 'hidden');
         $('.gunCont').css('visibility', 'visible');
@@ -249,71 +249,14 @@ $(document).ready(function(){
     $('.enterBtn').on('click', function(){
         resetGame();
     });
-    var scores =[
-        {
-            'score': 20,
-            'name': 'abc'
-        },
-        {
-            'score': 22,
-            'name': 'bbb'
-        },
-        {
-            'score': 23,
-            'name': 'ccc'
-        },
-        {
-            'score': 11,
-            'name': 'ccc'
-        },
-        {
-            'score': 44,
-            'name': 'ccc'
-        },
-        {
-            'score': 55,
-            'name': 'ccc'
-        },
-        {
-            'score': 66,
-            'name': 'ccc'
-        },
-        {
-            'score': 44,
-            'name': 'ccc'
-        },
-        {
-            'score': 55,
-            'name': 'ccc'
-        },
-        {
-            'score': 66,
-            'name': 'ccc'
-        }
-    ]
-    var scores1 = [
-       scores[0].score,
-       scores[1].score,
-       scores[2].score,
-       scores[3].score,
-       scores[4].score,
-       scores[5].score,
-       scores[6].score,
-       scores[7].score,
-       scores[8].score,
-       scores[9].score
-    ]
-    console.log(scores1);
-    // scores.sort(function(a, b){return b-a});
-    // console.log(scores[0].score.val());
-    $.each(scores, function(i,value){
-        scores1.sort(function(a,b){return b-a});
-        var name = scores[i].name;
-        var score = scores[i].score; 
-        $('.score' + i).append(name+' '+score);
-        console.log(name, score );
+    // $.each(scores, function(i,value){
+    //     scores1.sort(function(a,b){return b-a});
+    //     var name = scores[i].name;
+    //     var score = scores[i].score; 
+    //     $('.score' + i).append(name+' '+score);
+    //     console.log(name, score );
         
-    });
+    // });
 // ***********************   printer   *******************************************
     $('.knob').on('click', function(){
         function stageUp(){
@@ -409,6 +352,14 @@ $(document).ready(function(){
             truck();
         }
     });
+    // ***************** thank you letter****************
+    var like = new TimelineLite();
+
+    $('.likeBtn').on('click', function(){
+        like.to($('.thumbCont'), .3,{css: {"-ms-transform": "rotate(65deg)",
+        "-webkit-transform": "rotate(65deg)","transform": "rotate(65deg)"}});
+        $("#iLike").html('!');
+    })
 });
 
 

@@ -1206,6 +1206,89 @@ body {
         width: 1140px;
     }
 }
-
-
+.thankstext{
+    color: black;
+    font-size: 20px;
+    height: 500px;
+    width: 50%;
+    margin: 100px 20px 20px;
+    position: relative;
+    float: left;
+    display: block;
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+.likeBtn{
+    width: 45%;
+    height: 350px;
+    background: #ecf0f7;
+    float: left;
+    position: relative;
+    display: block;
+    margin-top: 100px;
+    border: 10px solid #435284;
+    border-radius: 30px;
+}
+.likeBtn:hover{
+    cursor: pointer; 
+}
+.likeBtn h1{
+    font-size: 100px;
+    color: #435284;
+    margin: 110px 20px;
+}
+.hand{
+    background: white;
+    display: block;
+    height: 200px;
+    width: 220px;
+    border-radius: 30px 61px 30px;
+    right: 50px;
+    bottom: 10px;
+    position: absolute;
+}
+.knuckle{
+    background: white;
+    height: 50px;
+    width: 84px;
+    border-radius: 20px;
+    position: relative;
+}
+.k1{
+    left: -37px;
+}
+.k2{
+    left: -34px;
+}
+.k3{
+    left: -25px;
+}
+.k4{
+    left: -8px;
+}
+.thumbCont{
+    position: absolute;
+    background: white;
+    width: 148px;
+    height: 75px;
+    border-radius: 30px;
+    top: -9px;
+    right: 27px;
+    transform-origin: 80%;
+    -ms-transform: rotate(0deg); /* IE 9 */
+    -webkit-transform: rotate(0deg); /* Chrome, Safari, Opera */
+    transform: rotate(0deg);
+}
+.upperThumb{
+    height: 81px;
+    width: 67px;
+    background:white;
+    bottom: -26px;
+    right: 66px;
+    position: relative;
+    border-radius: 59px 35px 100px 34px;
+    transform-origin: right;
+    -ms-transform: rotate(106deg); /* IE 9 */
+    -webkit-transform: rotate(106deg); /* Chrome, Safari, Opera */
+    transform: rotate(106deg);
+}
 
