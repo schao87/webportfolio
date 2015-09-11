@@ -1210,7 +1210,7 @@ body {
     color: black;
     font-size: 20px;
     height: 500px;
-    width: 50%;
+    /*width: 50%;*/
     margin: 100px 20px 20px;
     position: relative;
     float: left;
@@ -1218,7 +1218,7 @@ body {
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 .likeBtn{
-    width: 45%;
+    /*width: 45%;*/
     height: 350px;
     background: #ecf0f7;
     float: left;
@@ -1235,6 +1235,7 @@ body {
     font-size: 100px;
     color: #435284;
     margin: 110px 20px;
+    width: 50%;
 }
 .hand{
     background: white;
@@ -1242,9 +1243,9 @@ body {
     height: 200px;
     width: 220px;
     border-radius: 30px 61px 30px;
-    right: 50px;
-    bottom: 10px;
-    position: absolute;
+    left: 56%;
+    bottom: 61%;
+    position: relative;
 }
 .knuckle{
     background: white;
@@ -1291,4 +1292,21 @@ body {
     -webkit-transform: rotate(106deg); /* Chrome, Safari, Opera */
     transform: rotate(106deg);
 }
+@media(min-width:640px){
+    .thankstext{
+        width:80%;
+    }
+    .likeBtn{
+        min-width: 620px;
+    }
+}
+@media(min-width:960px){
+    .thankstext{
+        width: 50%;
+    }
+    .likeBtn{
+        width: 45%;
+    }
+}
+
 
